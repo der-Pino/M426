@@ -14,12 +14,11 @@ namespace Tennis
         private string player1Name;
         private string player2Name;
 
-        public TennisGameManager(string player1Name, 
-            string player2Name)
+        public TennisGameManager(string player1Name, string player2Name)
         {
             this.player1Name = player1Name;
-            p1point = 0;
             this.player2Name = player2Name;
+            p1point = 0;
         }
 
         public string Score_Getter()
@@ -31,12 +30,10 @@ namespace Tennis
                     s = "Love";
                 if (p1point == 1)
                 {
-                    s = "Fifteen";}
+                    s = "Fifteen";
+                }
                 if (p1point == 2)
                     s = "Thirty";
-                // do we need this?
-                //if (p1point == 3)
-                //    s = "Fourty";
                 s += "-All";
             }
             if (p1point == p2point && p1point > 2)
@@ -57,43 +54,61 @@ namespace Tennis
             if (p2point > 0 && p1point == 0)
             {
                 var temp = p2point;
-                if (temp == 1)
-                    p2res = "Fifteen";
-                else
-                {
-                    // todo: 
+                if (temp == 1) 
+                { 
+                    p2res = "Fifteen"; 
                 }
                 if (temp == 2)
+                {
                     p2res = "Thirty";
+                }
                 if (temp == 3)
+                {
                     p2res = "Forty";
+                }
 
                 p1res = "Love";
                 s = p1res + "-" + p2res;
             }
             if (p1point > p2point && p1point < 4){
                 if (p1point == 2)
+                {
                     p1res = "Thirty";
+                }
                 if (p1point == 3)
+                {
                     p1res = "Forty";
+                }
                 if (p2point == 1)
+                {
                     p2res = "Fifteen";
+                }
                 if (p2point == 2)
+                {
                     p2res = "Thirty";
+                }
                 s = p1res + "-" + p2res;}
 
 
 
             if (p2point > p1point && p2point < 4)
             {
-                if (p2point ==   2)
+                if (p2point == 2)
+                {
                     p2res = "Thirty";
+                }
                 if (p2point == 3)
+                {
                     p2res = "Forty";
-                if (p1point == 1 )
+                }
+                if (p1point == 1)
+                {
                     p1res = "Fifteen";
+                }
                 if (p1point == 2)
+                {
                     p1res = "Thirty";
+                }
                 s = p1res + "-" + p2res;
             }
 
@@ -115,32 +130,7 @@ namespace Tennis
             return s;
         }
 
-        // This is the old implemenation: we may can it use later.
-        //private string GetResultOld(int tempScore, int m_score1, int m_score2)
-        //{
-        //    var score = "";
-        //    for (var i = 1; i < 3; i++)
-        //    {
-        //        if (i == 1) tempScore = m_score1;
-        //        else { score += "-"; tempScore = m_score2; }
-        //        switch (tempScore)
-        //        {
-        //            case 0:
-        //                score += "Love";
-        //                break;
-        //            case 1:
-        //                score += "Fifteen";
-        //                break;
-        //            case 2:
-        //                score += "Thirty";
-        //                break;
-        //            case 3:
-        //                score += "Forty";
-        //                break;
-        //        }
-        //    }
-        //    return "error";
-        //}
+       
 
         private static string generate_Player_2_Name()
         {
